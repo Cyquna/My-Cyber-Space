@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Links with Iframe Overlay</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+
+        /* Styling for the link list */
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .link-list li {
+            margin: 10px 0;
+        }
+
+        .link-list a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .link-list a:hover {
+            color: #0056b3;
+        }
+
+        /* Styling for the overlay iframe */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Click on any Proxy Link</h1>
+
+    <ul class="link-list">
+        <li><a href="#" data-url="https://angle.think.thehabegers.com/">Proxy 1</a></li>
+        <li><a href="#" data-url="https://graph.guide.mojok.org/">Proxy 2</a></li>
+        <li><a href="#" data-url="https://mind.add.joaopedroreis.com/">Proxy 3</a></li>
+        <li><a href="#" data-url="https://cells.school.jaaax.com/">Proxy 4</a></li>
+        <li><a href="#" data-url="https://goal.think.vomy.com/">Proxy 5</a></li>
+        <li><a href="#" data-url="https://mind.add.joaopedroreis.com/">Proxy 6</a></li>
+        <li><a href="#" data-url="https://cells.school.jaaax.com">Proxy 7</a></li>
+        <li><a href="#" data-url="https://goal.write.dd0c.com/">Proxy 8</a></li>
+        <li><a href="#" data-url="https://skills.ela.briandelano.com/">Proxy 9</a></li>
+        <li><a href="#" data-url="https://goal.write.dd0c.com/">Proxy 10</a></li>
+        <li><a href="#" data-url="https://skills.ela.briandelano.com/">Proxy 11</a></li>
+        <li><a href="#" data-url="https://angle.sci.amotaal.com/">Proxy 12</a></li>
+        <li><a href="#" data-url="https://class.course.acslincoln.com/">Proxy 13</a></li>
+        <li><a href="#" data-url="https://goal.think.vomy.com/">Proxy 14</a></li>
+    </ul>
+
+    <!-- Overlay Iframe -->
+    <div class="overlay" id="iframe-overlay">
+        <div class="iframe-container">
+            <button class="close-btn" id="close-btn">X</button>
+            <iframe id="iframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Select all links
+        const links = document.querySelectorAll('.link-list a');
+        const overlay = document.getElementById('iframe-overlay');
+        const iframe = document.getElementById('iframe');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Event listener for links
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const url = this.getAttribute('data-url'); // Get the URL from the data-url attribute
+                iframe.src = url; // Set the iframe src to the clicked link's URL
+                overlay.style.display = 'flex'; // Show the overlay
+            });
+        });
+
+        // Close the overlay when the close button is clicked
+        closeBtn.addEventListener('click', function() {
+            overlay.style.display = 'none'; // Hide the overlay
+            iframe.src = ''; // Stop the iframe content
+        });
+
+        // Close overlay when clicking outside the iframe
+        overlay.addEventListener('click', function(event) {
+            if (event.target === overlay) {
+                overlay.style.display = 'none'; // Hide the overlay
+                iframe.src = ''; // Stop the iframe content
+            }
+        });
+    </script>
+
+</body>
+</html>
