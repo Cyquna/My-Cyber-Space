@@ -2095,5 +2095,25 @@ window.addEventListener('beforeunload', function(event) {
 });
   </script>
 
+<script>// Get all iframes on the page
+const iframes = document.querySelectorAll('iframe');
+
+// Iterate through each iframe
+iframes.forEach(iframe => {
+  // Attach a click event listener to the iframe's content window
+  iframe.contentWindow.addEventListener('click', (event) => {
+    // Check if the clicked element is an anchor tag
+    if (event.target.tagName === 'A') {
+      // Prevent the default behavior
+      event.preventDefault();
+
+      // Optionally, handle the click as needed
+      // For example, you could redirect within the iframe:
+      window.location.href = event.target.href;
+    }
+  });
+});
+</script>
+
 </body>
 </html>
