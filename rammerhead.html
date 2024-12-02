@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Links with Iframe Overlay</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+
+        /* Styling for the link list */
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .link-list li {
+            margin: 10px 0;
+        }
+
+        .link-list a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .link-list a:hover {
+            color: #0056b3;
+        }
+
+        /* Styling for the overlay iframe */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Click on any Proxy Link</h1>
+
+    <ul class="link-list">
+        <ul class="link-list">
+    <li><a href="#" data-url="https://timeisblind.puffballofevil.com/">Proxy 1</a></li>
+    <li><a href="#" data-url="https://huawaakiskokoa.duckdns.org/">Proxy 2</a></li>
+    <li><a href="#" data-url="https://schoology.hotunix.com/">Proxy 3</a></li>
+    <li><a href="#" data-url="https://rmerheadonionlink.hotunix.com/">Proxy 4</a></li>
+    <li><a href="#" data-url="https://hotunixispeak.hotunix.com/">Proxy 5</a></li>
+    <li><a href="#" data-url="https://somuchpeakk.hotunix.com/">Proxy 6</a></li>
+    <li><a href="#" data-url="https://adamz2eso.l5.ca/">Proxy 7</a></li>
+    <li><a href="#" data-url="https://justinisnotgoodat1v1.lol.mindboggle.us/">Proxy 8</a></li>
+    <li><a href="#" data-url="https://shark-pan.f5.si/">Proxy 9</a></li>
+    <li><a href="#" data-url="https://shark-pan.webredirect.org/">Proxy 10</a></li>
+    <li><a href="#" data-url="https://shark-pan.swanndvr.net/">Proxy 11</a></li>
+    <li><a href="#" data-url="https://shark-nanoda.swanndvr.net/">Proxy 12</a></li>
+    <li><a href="#" data-url="https://qwertyabc123.nekros.info/">Proxy 13</a></li>
+    <li><a href="#" data-url="https://thisisnotagamewebsite.thebrittainlawfirm.com/">Proxy 14</a></li>
+    <li><a href="#" data-url="https://cobrakaiiiiii.luhu.jp/">Proxy 15</a></li>
+    <li><a href="#" data-url="https://idsmashskibiditoiletbruhh.murighiol.ro/">Proxy 16</a></li>
+    <li><a href="#" data-url="https://thisbetterstayonline.stremar.cl/">Proxy 17</a></li>
+    <li><a href="#" data-url="https://cheesepizza.undo.it/">Proxy 18</a></li>
+    <li><a href="#" data-url="https://gorammsesss.isoluxltda.cl/">Proxy 19</a></li>
+    <li><a href="#" data-url="https://loilonote.poo.li/">Proxy 20</a></li>
+    <li><a href="#" data-url="https://reallyreallyhardmathstuff333.intprosys.net/">Proxy 21</a></li>
+    <li><a href="#" data-url="https://hothockey.hardsoft.nu/">Proxy 22</a></li>
+    <li><a href="#" data-url="https://funrun.pii.at/">Proxy 23</a></li>
+    <li><a href="#" data-url="https://c.is-very.fun/">Proxy 24</a></li>
+    <li><a href="#" data-url="https://d.is-very.fun/">Proxy 25</a></li>
+    <li><a href="#" data-url="https://schoolsgotnothingonme.burgerbar.cl/">Proxy 26</a></li>
+    <li><a href="#" data-url="https://blooketcom.burgerbar.cl/">Proxy 27</a></li>
+    <li><a href="#" data-url="https://milbong.burgerbar.cl/">Proxy 28</a></li>
+    <li><a href="#" data-url="https://adfree-games-at.geometry-games.online/">Proxy 29</a></li>
+    <li><a href="#" data-url="https://unblocked-games-at.geometry-games.online/">Proxy 30</a></li>
+    <li><a href="#" data-url="https://shameless-plug-for.geometry-games.online/">Proxy 31</a></li>
+    <li><a href="#" data-url="https://play-games-at.geometry-games.online/">Proxy 32</a></li>
+    <li><a href="#" data-url="https://rammerhead.geometry-games.online/">Proxy 33</a></li>
+    <li><a href="#" data-url="https://browser.geometry-games.online/">Proxy 34</a></li>
+    <li><a href="#" data-url="https://im-in-the-thick-of-it-everybody-knows.dynorex.com/">Proxy 35</a></li>
+    <li><a href="#" data-url="https://youve-arived-to.walzone.com/">Proxy 36</a></li>
+    <li><a href="#" data-url="https://burger.burgerman.burgerbar.cl/">Proxy 37</a></li>
+    <li><a href="#" data-url="https://furriesarecute.furryplace.eu/">Proxy 38</a></li>
+    <li><a href="#" data-url="https://cometobigzaddy.rustyoptical.com/">Proxy 39</a></li>
+    <li><a href="#" data-url="https://i-will-stealillegaly.ilovestealingfromworkanddoingdrugs.com/">Proxy 40</a></li>
+    <li><a href="#" data-url="https://ivesisgood.bad.mn/">Proxy 41</a></li>
+    <li><a href="#" data-url="https://fbisd.happyrobotics.com/">Proxy 42</a></li>
+    <li><a href="#" data-url="https://ikerelpapu12.awiki.org/">Proxy 43</a></li>
+    <li><a href="#" data-url="https://brandangoodboy.norushcharge.com">Proxy 44</a></li>
+    <li><a href="#" data-url="https://wheremyhundred.norushcharge.com">Proxy 45</a></li>
+    <li><a href="#" data-url="https://twitter.4wardfabrications.com">Proxy 46</a></li>
+    <li><a href="#" data-url="https://fbisd.hmail.us/">Proxy 47</a></li>
+    <li><a href="#" data-url="https://dingdongeatitup.eatitwellandmixitup.newpowergroup.com">Proxy 48</a></li>
+    <li><a href="#" data-url="https://noice.newpowergroup.com/">Proxy 49</a></li>
+    <li><a href="#" data-url="https://ogsigloo.what2no.com/">Proxy 50</a></li>
+</ul>
+
+    <!-- Overlay Iframe -->
+    <div class="overlay" id="iframe-overlay">
+        <div class="iframe-container">
+            <button class="close-btn" id="close-btn">X</button>
+            <iframe id="iframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Select all links
+        const links = document.querySelectorAll('.link-list a');
+        const overlay = document.getElementById('iframe-overlay');
+        const iframe = document.getElementById('iframe');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Event listener for links
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const url = this.getAttribute('data-url'); // Get the URL from the data-url attribute
+                iframe.src = url; // Set the iframe src to the clicked link's URL
+                overlay.style.display = 'flex'; // Show the overlay
+            });
+        });
+
+        // Close the overlay when the close button is clicked
+        closeBtn.addEventListener('click', function() {
+            overlay.style.display = 'none'; // Hide the overlay
+            iframe.src = ''; // Stop the iframe content
+        });
+
+        // Close overlay when clicking outside the iframe
+        overlay.addEventListener('click', function(event) {
+            if (event.target === overlay) {
+                overlay.style.display = 'none'; // Hide the overlay
+                iframe.src = ''; // Stop the iframe content
+            }
+        });
+    </script>
+
+</body>
+</html>
