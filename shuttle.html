@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Links with Iframe Overlay</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+
+        /* Styling for the link list */
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .link-list li {
+            margin: 10px 0;
+        }
+
+        .link-list a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .link-list a:hover {
+            color: #0056b3;
+        }
+
+        /* Styling for the overlay iframe */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Click on any Proxy Link</h1>
+
+    <ul class="link-list">
+    <li><a href="#" data-url="https://proteomics.k12biology.com">Proxy 1</a></li>
+    <li><a href="#" data-url="https://kamanababu5.vercel.app/">Proxy 2</a></li>
+    <li><a href="#" data-url="https://shivakalpana5686.vercel.app/">Proxy 3</a></li>
+    <li><a href="#" data-url="https://machhapokhari88956vixr.vercel.app/">Proxy 4</a></li>
+    <li><a href="#" data-url="https://kalankishut7896.vercel.app/">Proxy 5</a></li>
+    <li><a href="#" data-url="https://sitamata22mai.vercel.app/">Proxy 6</a></li>
+    <li><a href="#" data-url="https://makhala2025xrc.vercel.app/">Proxy 7</a></li>
+    <li><a href="#" data-url="https://proteomics.k12biology.com">Proxy 8</a></li>
+    <li><a href="#" data-url="https://midara7.vercel.app/">Proxy 9</a></li>
+    <li><a href="#" data-url="https://pickupdamcpro.vercel.app/">Proxy 10</a></li>
+    <li><a href="#" data-url="https://namunabab22.vercel.app/">Proxy 11</a></li>
+    <li><a href="#" data-url="https://sipa56.vercel.app/">Proxy 12</a></li>
+    <li><a href="#" data-url="https://poweredbynirbytesp89.vercel.app/">Proxy 13</a></li>
+    <li><a href="#" data-url="https://shuttlextravi5265.vercel.app/">Proxy 14</a></li>
+    <li><a href="#" data-url="https://nirbytesshuttle925x.vercel.app/">Proxy 15</a></li>
+    <li><a href="#" data-url="https://dilasbakhati6546165.vercel.app/">Proxy 16</a></li>
+    <li><a href="#" data-url="https://shutlexi78.vercel.app/">Proxy 17</a></li>
+    <li><a href="#" data-url="https://rampage2546xvip.vercel.app/">Proxy 18</a></li>
+    <li><a href="#" data-url="https://smiakhalifa85965crf.vercel.app/">Proxy 19</a></li>
+    <li><a href="#" data-url="https://gulabigratpti8954.vercel.app/">Proxy 20</a></li>
+    <li><a href="#" data-url="https://christianoronaldocr7568.vercel.app/">Proxy 21</a></li>
+    <li><a href="#" data-url="https://messi2025cupxrc.vercel.app/">Proxy 22</a></li>
+    <li><a href="#" data-url="https://vipusers2024xr.vercel.app/">Proxy 23</a></li>
+    <li><a href="#" data-url="https://nirbytexeiv6.vercel.app/">Proxy 24</a></li>
+    <li><a href="#" data-url="https://sheetalshr56.vercel.app/">Proxy 25</a></li>
+    <li><a href="#" data-url="https://dipak20.vercel.app/">Proxy 26</a></li>
+    <li><a href="#" data-url="https://gankhu2344.vercel.app/">Proxy 27</a></li>
+    <li><a href="#" data-url="https://sanpraunited2.vercel.app/">Proxy 28</a></li>
+    <li><a href="#" data-url="https://saramprat2021.vercel.app/">Proxy 29</a></li>
+    <li><a href="#" data-url="https://dimakash554.vercel.app/">Proxy 30</a></li>
+    <li><a href="#" data-url="https://simadnirbytes5455.vercel.app/">Proxy 31</a></li>
+    <li><a href="#" data-url="https://simaldie4346.vercel.app/">Proxy 32</a></li>
+    <li><a href="#" data-url="https://clientnirbytes665.vercel.app/">Proxy 33</a></li>
+</ul>
+
+
+    <!-- Overlay Iframe -->
+    <div class="overlay" id="iframe-overlay">
+        <div class="iframe-container">
+            <button class="close-btn" id="close-btn">X</button>
+            <iframe id="iframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Select all links
+        const links = document.querySelectorAll('.link-list a');
+        const overlay = document.getElementById('iframe-overlay');
+        const iframe = document.getElementById('iframe');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Event listener for links
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const url = this.getAttribute('data-url'); // Get the URL from the data-url attribute
+                iframe.src = url; // Set the iframe src to the clicked link's URL
+                overlay.style.display = 'flex'; // Show the overlay
+            });
+        });
+
+        // Close the overlay when the close button is clicked
+        closeBtn.addEventListener('click', function() {
+            overlay.style.display = 'none'; // Hide the overlay
+            iframe.src = ''; // Stop the iframe content
+        });
+
+        // Close overlay when clicking outside the iframe
+        overlay.addEventListener('click', function(event) {
+            if (event.target === overlay) {
+                overlay.style.display = 'none'; // Hide the overlay
+                iframe.src = ''; // Stop the iframe content
+            }
+        });
+    </script>
+
+</body>
+</html>
